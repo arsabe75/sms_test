@@ -4,13 +4,32 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Funciona con telephony 0.2.0
 
-A few resources to get you started if this is your first Flutter project:
+Hay que agregar lo siguiente a AndroidManifest.xml (SEND_SMS & READ_SMS)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+
+    <application
+        android:label="sms_test"
+...
+
+Hay que poner el mínimo SDK a 23 (minSdkVersion 23) en build.gradle
+
+defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.sms_test"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        //minSdkVersion flutter.minSdkVersion
+        minSdkVersion 23
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+Sólo me funcionó en android 12, tengo otro teléfono con android 6, que es el que uso
+para pruebas y ahí no funcionó. Así que debería funcionar en las últimas versiones de android.
