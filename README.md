@@ -33,3 +33,7 @@ defaultConfig {
 
 Sólo me funcionó en android 12, tengo otro teléfono con android 6, que es el que uso
 para pruebas y ahí no funcionó. Así que debería funcionar en las últimas versiones de android.
+
+Compilar APK desde la línea de comandos dentro del directorio del proyecto con:
+
+flutter build apk
